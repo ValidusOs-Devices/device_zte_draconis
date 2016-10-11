@@ -18,9 +18,6 @@ audio.offload.video=false
 av.streaming.offload.enable=false
 tunnel.audio.encode=false
 
-# Camera
-camera2.portability.force_api=1
-
 # Display
 ro.sf.lcd_density=320
 ro.opengles.version=196608
@@ -31,23 +28,14 @@ debug.sf.fb_always_on=1
 # GPS
 ro.gps.agps_provider=1
 
-# Media
-media.aac_51_output_enabled=true
-media.stagefright.enable-player=true
-media.stagefright.enable-http=true
-media.stagefright.enable-aac=true
-media.stagefright.enable-qcp=true
-media.stagefright.enable-fma2dp=true
-media.stagefright.enable-scan=true
-mmp.enable.3g2=true
-mm.enable.smoothstreaming=true
-vidc.debug.level=1
+ro.qc.sdk.izat.premium_enabled=1
+ro.qc.sdk.izat.service_mask=0x5
+persist.gps.qc_nlp_in_use=1
+persist.loc.nlp_name=com.qualcomm.services.location
 
-# Memory
-ro.config.low_ram=true
-config.disable_atlas=true
-ro.config.max_starting_bg=4
-persist.sys.force_highendgfx=true
+# Media
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
 
 # Qualcomm
 ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
@@ -111,7 +99,6 @@ ro.sys.sdcardfs=true
 
 # Subsystem
 persist.sys.ssr.enable_debug=0
-
 
 # Time services
 persist.timed.enable=true

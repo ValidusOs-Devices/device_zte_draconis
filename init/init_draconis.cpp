@@ -47,7 +47,7 @@ void vendor_load_properties()
     std::string radio = property_get("ro.boot.radio");
 
     if (radio == "0x1") {
-        /* xt1045*/
+       
         gsm_properties();
         property_set("ro.product.device", "draconis");
         property_set("ro.product.model", "draconis");
@@ -55,7 +55,7 @@ void vendor_load_properties()
 
 
     } else if (radio == "0x3") {
-        /* xt1039 */
+        
         gsm_properties();
         property_set("ro.product.device", "draconis");
         property_set("ro.product.model", "draconis");
@@ -63,7 +63,7 @@ void vendor_load_properties()
 
 
     } else if (radio == "0x5") {  
-        /* xt1040 */
+      
         gsm_properties();
         property_set("ro.product.device", "draconis");
         property_set("ro.product.model", "draconis");
