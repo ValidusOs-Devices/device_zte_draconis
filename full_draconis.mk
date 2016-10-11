@@ -102,7 +102,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libxml2 \
     camera.msm8226 \
-    Camera2
+     Snap
 
 # Compatibility
 PRODUCT_PACKAGES += \
