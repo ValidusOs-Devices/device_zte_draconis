@@ -147,6 +147,9 @@ USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
 # Radio
 TARGET_RIL_VARIANT := caf
 
+# Use Snapdragon LLVM, if available
+TARGET_USE_SDCLANG := true
+
 # Recovery
 BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_HAS_NO_SELECT_BUTTON := true
