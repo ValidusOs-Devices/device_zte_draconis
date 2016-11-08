@@ -61,6 +61,9 @@ TARGET_SPECIFIC_HEADER_PATH := device/zte/draconis/include
 TARGET_BOARD_PLATFORM := msm8226
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 
+# Use Snapdragon LLVM, if available
+TARGET_USE_SDCLANG := true
+
 # Memory
 MALLOC_SVELTE := true
 
