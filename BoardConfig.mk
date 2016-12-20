@@ -61,9 +61,6 @@ TARGET_SPECIFIC_HEADER_PATH := device/zte/draconis/include
 TARGET_BOARD_PLATFORM := msm8226
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 
-# Memory
-MALLOC_IMPL := dlmalloc
-
 # Architecture
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
