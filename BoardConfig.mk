@@ -46,7 +46,6 @@ TARGET_OTA_ASSERT_DEVICE := draconis
 USE_CLANG_PLATFORM_BUILD := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_draconis.cpp
 TARGET_UNIFIED_DEVICE := true
 
