@@ -42,14 +42,21 @@
 #include <sys/mount.h>
 
 
-#include "init_msm.h"
+#define ISMATCH(a,b)    (!strncmp(a,b,PROP_VALUE_MAX))
 
 #define PERSISTENT_PROPERTY_DIR  "/data/property"
 
-void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
+void vendor_load_properties()
 {
-    UNUSED(msm_id);
-    UNUSED(msm_ver);
-    UNUSED(board_type);
-    return;
+    char platform[PROP_VALUE_MAX];
+    char radio[PROP_VALUE_MAX];
+    char sku[PROP_VALUE_MAX];
+    char carrier[PROP_VALUE_MAX];
+    char device[PROP_VALUE_MAX];
+    char devicename[PROP_VALUE_MAX];
+    int rc;
+
+    rc = property_get("ro.board.platform", platform);
+    if (!rc || !ISMATCH(platform, ANDROID_TARGET))
+        return;
 }

@@ -46,7 +46,8 @@ TARGET_OTA_ASSERT_DEVICE := draconis
 USE_CLANG_PLATFORM_BUILD := true
 
 # Init
-TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_draconis.cpp
+TARGET_INIT_VENDOR_LIB := libinit_draconis
+TARGET_RECOVERY_DEVICE_MODULES := libinit_draconis
 TARGET_UNIFIED_DEVICE := true
 
 # Recovery
