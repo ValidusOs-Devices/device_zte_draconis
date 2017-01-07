@@ -1,6 +1,6 @@
+
 /*
    Copyright (c) 2014, The Linux Foundation. All rights reserved.
-
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -13,7 +13,6 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
-
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -42,19 +41,10 @@
 #include <sys/mount.h>
 
 
-#define ISMATCH(a,b)    (!strncmp(a,b,PROP_VALUE_MAX))
-
 #define PERSISTENT_PROPERTY_DIR  "/data/property"
 
-void vendor_load_properties()
+void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
-    char platform[PROP_VALUE_MAX];
-    char radio[PROP_VALUE_MAX];
-    char sku[PROP_VALUE_MAX];
-    char carrier[PROP_VALUE_MAX];
-    char device[PROP_VALUE_MAX];
-    char devicename[PROP_VALUE_MAX];
-    int rc;
 
-  
+    return;
 }
