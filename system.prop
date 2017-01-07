@@ -42,18 +42,6 @@ persist.sys.force_highendgfx=true
 media.stagefright.legacyencoder=true
 media.stagefright.less-secure=true
 
-# NITZ
-persist.radio.nitz_plmn=
-persist.radio.nitz_lons_0=
-persist.radio.nitz_lons_1=
-persist.radio.nitz_lons_2=
-persist.radio.nitz_lons_3=
-persist.radio.nitz_sons_0=
-persist.radio.nitz_sons_1=
-persist.radio.nitz_sons_2=
-persist.radio.nitz_sons_3=
->>>>>>> 13a3c75... msm8226-common: Enable legacy HAL1 hacks
-
 # Qualcomm
 ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
 ro.qualcomm.cabl=0
