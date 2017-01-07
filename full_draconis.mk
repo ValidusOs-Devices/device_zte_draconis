@@ -146,6 +146,10 @@ PRODUCT_PACKAGES += \
     memtrack.msm8226 \
     liboverlay \
     libgenlock
+
+# Telephony-ext
+PRODUCT_PACKAGES += telephony-ext
+PRODUCT_BOOT_JARS += telephony-ext
     
 # Ebtables
 PRODUCT_PACKAGES += \
