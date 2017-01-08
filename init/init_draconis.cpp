@@ -1,6 +1,6 @@
-
 /*
-   Copyright (c) 2014, The Linux Foundation. All rights reserved.
+   Copyright (c) 2013, The Linux Foundation. All rights reserved.
+
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -13,6 +13,7 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
+
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -33,18 +34,58 @@
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
-#include <dirent.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/mount.h>
 
+void gsm_properties();
+void cdma_properties(const char *cdma_sub);
 
-#define PERSISTENT_PROPERTY_DIR  "/data/property"
-
-void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
+void vendor_load_properties()
 {
+    std::string platform = property_get("ro.board.platform");
+    if (platform != ANDROID_TARGET)
+        return;
 
-    return;
+    std::string radio = property_get("ro.boot.radio");
+
+    if (radio == "0x1") {
+        /* xt1045*/
+        gsm_properties();
+        property_set("ro.product.device", "draconis");
+        property_set("ro.product.model", "draconis");
+        property_set("ro.product.display", "ZTE ZMAX");
+
+
+    } else if (radio == "0x3") {
+        /* xt1039 */
+        gsm_properties();
+        property_set("ro.product.device", "draconis");
+        property_set("ro.product.model", "draconis");
+        property_set("ro.product.display", "ZTE ZMAX");
+
+
+    } else if (radio == "0x5") {  
+        /* xt1040 */
+        gsm_properties();
+        property_set("ro.product.device", "draconis");
+        property_set("ro.product.model", "draconis");
+        property_set("ro.product.display", "ZTE ZMAX");
+ 
+    }
+
+    std::string device = property_get("ro.product.device");
+    INFO("Found radio id %s setting build properties for %s device\n", radio.c_str(), device.c_str());
+}
+
+void gsm_properties()
+{
+    property_set("telephony.lteOnGsmDevice", "1");
+    property_set("ro.telephony.default_network", "9");
+}
+
+void cdma_properties(const char *cdma_sub)
+{
+    property_set("ro.telephony.default_cdma_sub", cdma_sub);
+    property_set("ril.subscription.types","NV,RUIM");
+    property_set("DEVICE_PROVISIONED","1");
+    property_set("telephony.lteOnCdmaDevice", "1");
+    property_set("ro.telephony.default_network", "10");
 }
