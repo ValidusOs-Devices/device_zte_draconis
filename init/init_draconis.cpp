@@ -34,27 +34,59 @@
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
-#include <dirent.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/mount.h>
 
-
-#define ISMATCH(a,b)    (!strncmp(a,b,PROP_VALUE_MAX))
-
-#define PERSISTENT_PROPERTY_DIR  "/data/property"
+void gsm_properties();
+void cdma_properties(const char *cdma_sub);
 
 void vendor_load_properties()
 {
-    char platform[PROP_VALUE_MAX];
-    char radio[PROP_VALUE_MAX];
-    char sku[PROP_VALUE_MAX];
-    char carrier[PROP_VALUE_MAX];
-    char device[PROP_VALUE_MAX];
-    char devicename[PROP_VALUE_MAX];
-    int rc;
+    std::string platform = property_get("ro.board.platform");
+    if (platform != ANDROID_TARGET)
+        return;
 
-  
+    std::string radio = property_get("ro.boot.radio");
+
+    if (radio == "0x1") {
+        /* xt1045*/
+        gsm_properties();
+        property_set("ro.product.device", "draconis");
+        property_set("ro.product.model", "draconis");
+        property_set("ro.product.display", "ZTE ZMAX");
+
+
+    } else if (radio == "0x3") {
+        /* xt1039 */
+        gsm_properties();
+        property_set("ro.product.device", "draconis");
+        property_set("ro.product.model", "draconis");
+        property_set("ro.product.display", "ZTE ZMAX");
+
+
+    } else if (radio == "0x5") {  
+        /* xt1040 */
+        gsm_properties();
+        property_set("ro.product.device", "draconis");
+        property_set("ro.product.model", "draconis");
+        property_set("ro.product.display", "ZTE ZMAX");
+ 
+    }
+
+    std::string device = property_get("ro.product.device");
+    INFO("Found radio id %s setting build properties for %s device\n", radio.c_str(), device.c_str());
+}
+
+void gsm_properties()
+{
+    property_set("telephony.lteOnGsmDevice", "1");
+    property_set("ro.telephony.default_network", "9");
+}
+
+void cdma_properties(const char *cdma_sub)
+{
+    property_set("ro.telephony.default_cdma_sub", cdma_sub);
+    property_set("ril.subscription.types","NV,RUIM");
+    property_set("DEVICE_PROVISIONED","1");
+    property_set("telephony.lteOnCdmaDevice", "1");
+    property_set("ro.telephony.default_network", "10");
+
 }
