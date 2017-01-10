@@ -50,7 +50,7 @@ void vendor_load_properties()
        
         gsm_properties();
         property_set("ro.product.device", "draconis");
-        property_set("ro.product.model", "draconis");
+        property_set("ro.product.model", "Z970");
         property_set("ro.product.display", "ZTE ZMAX");
 
 
@@ -58,7 +58,7 @@ void vendor_load_properties()
         
         gsm_properties();
         property_set("ro.product.device", "draconis");
-        property_set("ro.product.model", "draconis");
+        property_set("ro.product.model", "Z970");
         property_set("ro.product.display", "ZTE ZMAX");
 
 
@@ -66,7 +66,7 @@ void vendor_load_properties()
       
         gsm_properties();
         property_set("ro.product.device", "draconis");
-        property_set("ro.product.model", "draconis");
+        property_set("ro.product.model", "Z970");
         property_set("ro.product.display", "ZTE ZMAX");
  
     }
