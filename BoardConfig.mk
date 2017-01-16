@@ -166,6 +166,8 @@ TW_EXCLUDE_SUPERSU := true
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_CRYPTO := true
 
+TARGET_USERIMAGES_USE_F2FS := true 
+
 
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
