@@ -70,6 +70,8 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8226
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
+BOARD_CUSTOM_BOOTIMG_MK := device/zte/draconis/mkbootimg.mk
+
 # Kernel
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=22 msm_rtb.filter=0x37 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x0000000
