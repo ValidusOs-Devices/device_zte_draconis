@@ -35,6 +35,11 @@ BOARD_GLOBAL_CFLAGS += -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
 # Assert
 TARGET_OTA_ASSERT_DEVICE := draconis
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_draconis
+TARGET_RECOVERY_DEVICE_MODULES := libinit_draconis
+TARGET_UNIFIED_DEVICE := tru
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
 
