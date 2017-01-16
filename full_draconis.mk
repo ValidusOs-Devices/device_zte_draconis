@@ -311,6 +311,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/usr/keylayout/Generic.kl:system/usr/keylayout/Generic.kl
 
+# twrp
+PRODUCT_COPY_FILES += device/zte/draconis/twrp.fstab:recovery/root/etc/twrp.fstab
+
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := draconis
