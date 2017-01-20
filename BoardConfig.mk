@@ -147,6 +147,10 @@ USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
 # Radio
 TARGET_RIL_VARIANT := caf
 
+
+# FM Radio		 
+TARGET_QCOM_NO_FM_FIRMWARE := true
+
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
